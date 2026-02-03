@@ -161,7 +161,8 @@ function setup() {
   if (scriptEl) {
     try {
       // [window.hlx.codeBasePath] = new URL(scriptEl.src).pathname.split('/scripts/scripts.js');
-      window.hlx.codeBasePath = new URL(scriptEl.src).href;
+      [window.hlx.codeBasePath] = new URL(scriptEl.src).href.split('/scripts/scripts.js');
+      // window.hlx.codeBasePath = new URL(scriptEl.src).href;
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
